@@ -9,7 +9,7 @@ When you first start the game there will be a practice zone on the left and a te
 To move to the test zone use your controller to point to the test zone pad and press 'g' to teleport there. In the test zone you will have to type out the correct spelling for the object in front of you (the same object you have just practiced before). Tap on the keys of the board using the controller and 'g' button and then press enter when you are done. If you have successfully spelled the word you can click the "Next Word" button to move to the next word. If you have not spelled the word correctly you can try again or move back to the practice zone for more practice. 
 
 
-##HW 3: VR_Visionaries Scene 
+## HW 3: VR_Visionaries Scene 
 <img width="1679" alt="Screenshot 2024-05-13 at 4 08 58 PM" src="https://github.com/jinanthony/VR_Visionaries/assets/72777523/a227ae6c-69fb-4b75-86f5-9cd7efb5e09d">
 
 Note: For HW3 we have just added the practice zone pad, test zone pad, keyboard, and whiteboard objects. The other functionalities outlined here will be added in HW4. 

@@ -1,8 +1,8 @@
 # VR_Visionaries
 Team Members: Diya Parmar, Anthony Jin, Aditi Phatak, Arul Saxena, Advait Arumugam 
 
-### Spell Me - A VR educational game to help dyslexic students practice spelling 
-In this project we have created a VR game that helps students practice sounding out and spelling words. An AI agent will walk the player through practice rounds of teaching the student how to break words into syllables and write the correct letters and then the student will be tested on their knowlege. 
+### Spell Me - A VR educational game to help students practice spelling 
+In this project we have created a VR game that helps students practice sounding out and spelling words. This project is targeted specifcally for students with dyslexia or students new to the English language. An AI agent will walk the player through practice rounds of teaching the student how to break words into syllables and write the correct letters and then the student will be tested on their knowlege. 
 
 When you first start the game there will be a practice zone on the left and a test zone on the right. Use your controller to navigate to the practice zone by pointing to the practice zone pad and pressing 'g'. This will use locomotion to teleport you to the practice zone area. In the practice zone area you will see an object that you are going to spell. Sound out all of the syllables in that word and for each syllable tap on your controller. This will lead to mini whiteboards appearing in front of you. Then grab the marker using the controller and the 'g' button and write the correct letter for each syllable in the whiteboard in front of you. Click the "Restart" button to clear the whiteboards and try again or if you have had enough practice then you can move to the test zone.
 

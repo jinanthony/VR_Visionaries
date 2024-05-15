@@ -43,6 +43,9 @@ public class NewBehaviourScript : MonoBehaviour
 
         if(Physics.Raycast(tip.position, transform.up, out touch, tipHeight)){
             if(touch.transform.CompareTag("Whiteboard")){
+
+                Debug.Log("Touching whiteboard");
+
                 if(whiteboard == null){
                     whiteboard = touch.transform.GetComponent<Whiteboard>();
                 }

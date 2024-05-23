@@ -23,11 +23,6 @@ public class NewBehaviourScript : MonoBehaviour
     private Quaternion lastTouchRot;
 
 
-    public XRBaseController leftController;
-    public XRBaseController rightController;
-
-    bool isTouchingWhiteboard = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -39,27 +34,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.CompareTag("Whiteboard") && !isTouchingWhiteboard)
-        {
-            isTouchingWhiteboard = true;
-            Debug.Log("Touching whiteboard");
-            rightController.SendHapticImpulse(0.5f, 0.3f);
-            leftController.SendHapticImpulse(0.5f, 0.3f);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-
-        if (other.CompareTag("Whiteboard"))
-        {
-            isTouchingWhiteboard = false;
-        }
-    }
-
+ 
     // Update is called once per frame
     void Update()
     {

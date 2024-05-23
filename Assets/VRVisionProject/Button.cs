@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Button : MonoBehaviour
 {
     public string stringInput = "";
+
+    public TextMeshPro screenText;
 
     private void Start()
     {
@@ -13,6 +16,7 @@ public class Button : MonoBehaviour
 
     public void onClick(string buttonName)
     {
+        screenText.color = Color.black;
         stringInput += buttonName;
        // Debug.Log("I entered " + stringInput);
     }
@@ -20,7 +24,17 @@ public class Button : MonoBehaviour
     public void onEnter()
     {
         // Debug.Log("I clicked enter!");
-        stringInput = "";
+
+        if(stringInput == "piano")
+        {
+           // Debug.Log("right SPELLING");
+            screenText.color = Color.green;
+        } else
+        {
+          // Debug.Log("WRONG SPELLING");
+            screenText.color = Color.red;
+        }
+            
     }
 
     public void onDelete()

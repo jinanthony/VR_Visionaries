@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.XR.Interaction.Toolkit;
+
+
 
 public class NewBehaviourScript : MonoBehaviour
 {
@@ -19,7 +22,12 @@ public class NewBehaviourScript : MonoBehaviour
     private bool touchedLastFrame;
     private Quaternion lastTouchRot;
 
-    
+
+    public XRBaseController leftController;
+    public XRBaseController rightController;
+
+    bool isTouchingWhiteboard = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +37,27 @@ public class NewBehaviourScript : MonoBehaviour
         tipHeight = tip.localScale.y;
 
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("Whiteboard") && !isTouchingWhiteboard)
+        {
+            isTouchingWhiteboard = true;
+            Debug.Log("Touching whiteboard");
+            rightController.SendHapticImpulse(0.5f, 0.3f);
+            leftController.SendHapticImpulse(0.5f, 0.3f);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        if (other.CompareTag("Whiteboard"))
+        {
+            isTouchingWhiteboard = false;
+        }
     }
 
     // Update is called once per frame
@@ -45,8 +74,8 @@ public class NewBehaviourScript : MonoBehaviour
             if(touch.transform.CompareTag("Whiteboard")){
 
                 Debug.Log("Touching whiteboard");
-
-                if(whiteboard == null){
+               
+                if (whiteboard == null){
                     whiteboard = touch.transform.GetComponent<Whiteboard>();
                 }
 

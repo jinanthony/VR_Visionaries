@@ -20,7 +20,7 @@ public class Instructions : MonoBehaviour
 
     public void onClickWrite()
     {
-        instructions = "Grab the marker.\nWrite the corresponding letter for each \nsyllable in the correct whiteboard.\n Then teleport to the test zone.";
+        instructions = "Grab the marker.\nWrite the corresponding letter for each \nsyllable in the correct whiteboard.\n Then teleport to the test zone behind you.";
     }
 
     public void onClickTest()

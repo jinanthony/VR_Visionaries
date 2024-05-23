@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.XR.Interaction.Toolkit;
+
 
 public class Button : MonoBehaviour
 {
     public string stringInput = "";
 
     public TextMeshPro screenText;
+
+    public XRBaseController leftController;
+    public XRBaseController rightController;
+
 
     private void Start()
     {
@@ -16,6 +22,9 @@ public class Button : MonoBehaviour
 
     public void onClick(string buttonName)
     {
+        rightController.SendHapticImpulse(0.5f, 0.1f);
+        leftController.SendHapticImpulse(0.5f, 0.1f);
+
         screenText.color = Color.black;
         stringInput += buttonName;
        // Debug.Log("I entered " + stringInput);
@@ -24,8 +33,10 @@ public class Button : MonoBehaviour
     public void onEnter()
     {
         // Debug.Log("I clicked enter!");
+        rightController.SendHapticImpulse(0.5f, 0.3f);
+        leftController.SendHapticImpulse(0.5f, 0.3f);
 
-        if(stringInput == "piano")
+        if (stringInput == "piano")
         {
            // Debug.Log("right SPELLING");
             screenText.color = Color.green;
@@ -40,6 +51,9 @@ public class Button : MonoBehaviour
     public void onDelete()
     {
         //Debug.Log("I clicked delete!");
+        rightController.SendHapticImpulse(0.5f, 0.3f);
+        leftController.SendHapticImpulse(0.5f, 0.3f);
+
         if (stringInput.Length > 0)
         {
             stringInput = stringInput.Substring(0, stringInput.Length - 1);

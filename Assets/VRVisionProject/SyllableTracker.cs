@@ -9,6 +9,16 @@ public class SyllableTracker : MonoBehaviour
     public XRBaseController leftController;
     public XRBaseController rightController;
 
+    public List<GameObject> syllables;
+
+    public void Start()
+    {
+        foreach (GameObject obj in syllables)
+        {
+            obj.SetActive(true);
+        }
+    }
+
     public void onClick(GameObject obj)
     {
         obj.SetActive(false);

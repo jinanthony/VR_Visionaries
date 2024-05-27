@@ -9,6 +9,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class NewBehaviourScript : MonoBehaviour
 {
 
+    private XRBaseInteractable interactable;
+    public XRBaseController leftController;
+    public XRBaseController rightController;
+
     [SerializeField] private Transform tip;
     [SerializeField] private int penSize  = 5;
 
@@ -26,6 +30,8 @@ public class NewBehaviourScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        interactable = this.GetComponent<XRBaseInteractable>();
+        interactable.selectEntered.AddListener(OnSelectEntered);
         renderer = tip.GetComponent<Renderer>();
         colors  = Enumerable.Repeat(renderer.material.color, penSize * penSize).ToArray();
 
@@ -89,5 +95,9 @@ public class NewBehaviourScript : MonoBehaviour
 
         whiteboard = null;
         touchedLastFrame = false;
+    }
+    private void OnSelectEntered(SelectEnterEventArgs args){
+        rightController.SendHapticImpulse(0.5f, 0.1f);
+        leftController.SendHapticImpulse(0.5f, 0.1f);
     }
 }

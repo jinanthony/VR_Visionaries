@@ -5,27 +5,27 @@ using UnityEngine;
 public class Instructions : MonoBehaviour
 {
 
-    public string instructions = "Weclome To ReadMe.\nToday we will practice our spelling.\nClick to Continue.";
+    public string instructions = "Welcome to our game. \nToday we will be practicing our spelling. \n Navigate to your left, the practice zone by teleporting, and \nread the instructions on the left side of \nthe wall first to continue. If you need to click to \ndraw on the whiteboard, type letters, or\n teleport, use the inner button on the remotes.";
 
 
     public void onClickWelcome()
     {
-        instructions = "Navigate to the Practice Zone.\nTeleport to the zone on the left.";
+        instructions = "Welcome to our game. \nToday we will be practicing our spelling. \n Navigate to your left, the practice zone by teleporting, and \nread the instructions on the left side of \nthe wall first to continue. If you need to click to \ndraw on the whiteboard, type letters, or\n teleport, use the inner button on the remotes.";
     }
 
     public void onClickWord()
     {
-        instructions = "Sound out each syllable in the \nword out load.\nThen click the board with that syllable.";
+        instructions = "Locate the object in this area. This is the\n word you will spell. First, practice sounding\n out each syllable in the word out loud. Then\n click the board with that syllable. Once you\n are done, navigate to the right side of the\n wall to get the next instructions.";
     }
 
     public void onClickWrite()
     {
-        instructions = "Grab the marker.\nWrite the corresponding letter for each \nsyllable in the correct whiteboard.\n Then teleport to the test zone behind you.";
+        instructions = "Now, we will practice writing. Grab the \nmarker.Write the corresponding letter for\n each syllable in the correct whiteboard.\n Then teleport to the test zone behind you.";
     }
 
     public void onClickTest()
     {
-        instructions = "Click Enter when done.\n The screen will let you know if you \nhave spelled the word correctly.";
+        instructions = "Type the letters using the keyboard. Click Enter when done.\n The screen will let you know if you \nhave spelled the word correctly.";
     }
 
     void Update()

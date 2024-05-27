@@ -37,7 +37,7 @@ public class Button : MonoBehaviour
         rightController.SendHapticImpulse(0.5f, 0.3f);
         leftController.SendHapticImpulse(0.5f, 0.3f);
 
-        if (stringInput == WordProvider.getCurrentWord())
+        if (stringInput == WordProvider.GetCurrentWord())
         {
            // Debug.Log("right SPELLING");
             screenText.color = Color.green;

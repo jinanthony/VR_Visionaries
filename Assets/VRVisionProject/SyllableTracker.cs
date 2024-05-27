@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using TMPro;
 
 public class SyllableTracker : MonoBehaviour
 {
@@ -10,12 +11,22 @@ public class SyllableTracker : MonoBehaviour
     public XRBaseController rightController;
 
     public List<GameObject> syllables;
+    public GameObject syllablePrefab;
 
     public void Start()
     {
         foreach (GameObject obj in syllables)
         {
             obj.SetActive(true);
+        }
+
+        List<string> currentWordSyllables = WordProvider.GetSyllables();
+
+        for (int i = 0; i < currentWordSyllables.Count; i++)
+        {
+            GameObject newPrefabInstance = Instantiate(syllablePrefab, new Vector3(0.908f + -13.77f, 1.65f + 0.57f, 5.77f + -5.06f + 3.59f * i), Quaternion.identity, this.transform);
+            TextMeshPro tmp = newPrefabInstance.GetComponentInChildren<TextMeshPro>();
+            tmp.text = currentWordSyllables[i];
         }
     }
 

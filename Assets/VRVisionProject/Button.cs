@@ -8,6 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class Button : MonoBehaviour
 {
     public string stringInput = "";
+    public string[] wordBank = { "piano", "tiger", "horse", "sushi", "pineapple" };
+    public int wordBankIndex = 0;
 
     public TextMeshPro screenText;
 
@@ -36,7 +38,7 @@ public class Button : MonoBehaviour
         rightController.SendHapticImpulse(0.5f, 0.3f);
         leftController.SendHapticImpulse(0.5f, 0.3f);
 
-        if (stringInput == "piano")
+        if (stringInput == wordBank[0])
         {
            // Debug.Log("right SPELLING");
             screenText.color = Color.green;

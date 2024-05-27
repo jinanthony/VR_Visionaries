@@ -22,6 +22,7 @@ public class SyllableTracker : MonoBehaviour
     public void onClick(GameObject obj)
     {
         obj.SetActive(false);
+        Debug.Log("debugging:" + obj);
         rightController.SendHapticImpulse(0.5f, 0.3f);
         leftController.SendHapticImpulse(0.5f, 0.3f);
     }

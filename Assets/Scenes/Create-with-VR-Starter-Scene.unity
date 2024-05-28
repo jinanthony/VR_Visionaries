@@ -2448,13 +2448,14 @@ GameObject:
   - component: {fileID: 1209218271}
   - component: {fileID: 1209218270}
   - component: {fileID: 1209218269}
+  - component: {fileID: 1209218274}
   m_Layer: 0
   m_Name: Next Word
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1209218269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,13 +2552,127 @@ Transform:
   m_GameObject: {fileID: 1209218267}
   serializedVersion: 2
   m_LocalRotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 12.53, y: 1.57, z: 0.9}
+  m_LocalPosition: {x: 12.53, y: 1.57, z: 0.43}
   m_LocalScale: {x: 1.8, y: 0.1, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1435241229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
+--- !u!114 &1209218274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209218267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1850784951}
+        m_TargetAssemblyTypeName: Button, Assembly-CSharp
+        m_MethodName: onNext
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1218883829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,6 +2707,8 @@ MonoBehaviour:
   syllables: []
   syllablePrefab: {fileID: 6719135893927639237, guid: 1d66f20294de04574a80d7c0c1c3ca86,
     type: 3}
+  newPrefabInstance: {fileID: 0}
+  currentWord: 
 --- !u!4 &1218883831
 Transform:
   m_ObjectHideFlags: 0
@@ -4340,10 +4457,10 @@ MonoBehaviour:
     type: 3}
   horsePrefab: {fileID: 919132149155446097, guid: 65ec41fe8a55fc940a3edbd5c8527f79,
     type: 3}
-  sushiPrefab: {fileID: 1000010706944468, guid: 44f60cf25f94eed4a98f3dcc6e5d04fc,
-    type: 3}
-  pineapplePrefab: {fileID: 1000010466361374, guid: 80c29c7e0bd64654f8f59dda85e24897,
-    type: 3}
+  bananaPrefab: {fileID: 100000, guid: 461f0170c82b53340a9812199b63bbd4, type: 3}
+  hamburgerPrefab: {fileID: 100000, guid: 54b107e50acd7e24b96d7de887c68833, type: 3}
+  practiceModel: {fileID: 0}
+  testModel: {fileID: 0}
 --- !u!4 &1663610467
 Transform:
   m_ObjectHideFlags: 0
@@ -4629,6 +4746,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7004325583208892184}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1850784951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3216351220582627700, guid: 6fa653cbca80c4cc8832e0e49f4bb5b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7004325583208892184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850784950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a11c15004becd44a3961205a66cccdfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2057630118
 PrefabInstance:
   m_ObjectHideFlags: 0

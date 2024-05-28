@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 public static class WordProvider
 {
-    private static List<string> words = new List<string> { "pi-a-no", "ti-ger", "su-shi", "horse", "pine-ap-ple" };
-    private static int currentIndex = 1;
+    private static List<string> words = new List<string> { "pi-a-no", "ti-ger", "ba-na-na", "ham-bur-ger", "horse" };
+    private static int currentIndex = 2;
 
     // Returns the current word as a string
     public static string GetCurrentWord()

@@ -28,13 +28,6 @@ public class Instructions : MonoBehaviour
         instructions = "Type the letters using the keyboard. Click Enter when done.\n The screen will let you know if you \nhave spelled the word correctly.";
     }
 
-    public void onClickNext()
-    {
-        Debug.Log("Previous word:" + WordProvider.GetCurrentWord());
-        WordProvider.IncrementWord();
-        Debug.Log("Current word:" + WordProvider.GetCurrentWord());
-    }
-
     void Update()
     {
         string formattedInstructions = instructions.Replace("\\n", "\n");

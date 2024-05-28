@@ -7,8 +7,8 @@ public class DynamicModelSelector : MonoBehaviour
     public GameObject pianoPrefab;
     public GameObject tigerPrefab;
     public GameObject horsePrefab;
-    public GameObject hamburgerPrefab;
-    public GameObject bananaPrefab;
+    public GameObject sushiPrefab;
+    public GameObject pineapplePrefab;
     public GameObject practiceModel;
     public GameObject testModel;
 
@@ -29,19 +29,19 @@ public class DynamicModelSelector : MonoBehaviour
             practiceModel = Instantiate(horsePrefab, new Vector3(-13.3f, -0.03f, -2.91f), Quaternion.Euler(0, 90, 0), this.transform);
             testModel = Instantiate(horsePrefab, new Vector3(10.34f, -0.03f, 9.99f), Quaternion.Euler(0, -90, 0), this.transform);
         }
-        else if (WordProvider.GetCurrentWord() == "hamburger")
+        else if (WordProvider.GetCurrentWord() == "sushi")
         {
-            practiceModel = Instantiate(hamburgerPrefab, new Vector3(-13.3f, 0, -2.91f), Quaternion.Euler(0, 90, 0), this.transform);
-            testModel = Instantiate(hamburgerPrefab, new Vector3(10.34f, 0, 9.99f), Quaternion.Euler(0, -90, 0), this.transform);
-            practiceModel.transform.localScale = new Vector3(5, 5, 5);
-            testModel.transform.localScale = new Vector3(5, 5, 5);
+            practiceModel = Instantiate(sushiPrefab, new Vector3(-13.3f, 0.5f, -2.91f), Quaternion.Euler(0, 90, 0), this.transform);
+            testModel = Instantiate(sushiPrefab, new Vector3(10.34f, 0.5f, 9.99f), Quaternion.Euler(0, -90, 0), this.transform);
+            practiceModel.transform.localScale = new Vector3(20, 20, 20);
+            testModel.transform.localScale = new Vector3(20, 20, 20);
         }
-        else if (WordProvider.GetCurrentWord() == "banana")
+        else if (WordProvider.GetCurrentWord() == "pineapple")
         {
-            practiceModel = Instantiate(bananaPrefab, new Vector3(-13.3f, 0, -2.91f), Quaternion.Euler(0, 0, 0), this.transform);
-            testModel = Instantiate(bananaPrefab, new Vector3(10.34f, 0, 9.99f), Quaternion.Euler(0, -180, 0), this.transform);
-            practiceModel.transform.localScale = new Vector3(5, 5, 5);
-            testModel.transform.localScale = new Vector3(5, 5, 5);
+            practiceModel = Instantiate(pineapplePrefab, new Vector3(-13.3f, 1.2f, -2.91f), Quaternion.Euler(0, 90, 0), this.transform);
+            testModel = Instantiate(pineapplePrefab, new Vector3(10.34f, 1.2f, 9.99f), Quaternion.Euler(0, -90, 0), this.transform);
+            practiceModel.transform.localScale = new Vector3(15, 15, 15);
+            testModel.transform.localScale = new Vector3(15, 15, 15);
         }
     }
 

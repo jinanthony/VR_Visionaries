@@ -12,6 +12,8 @@ public class SyllableTracker : MonoBehaviour
 
     public List<GameObject> syllables;
     public GameObject syllablePrefab;
+    public GameObject newPrefabInstance;
+    public string currentWord;
 
     public void Start()
     {
@@ -21,10 +23,11 @@ public class SyllableTracker : MonoBehaviour
         }
 
         List<string> currentWordSyllables = WordProvider.GetSyllables();
+        currentWord = WordProvider.GetCurrentWord();
 
         for (int i = 0; i < currentWordSyllables.Count; i++)
         {
-            GameObject newPrefabInstance = Instantiate(syllablePrefab, new Vector3(0.908f + -13.77f, 1.65f + 0.57f, 5.77f + -5.06f + 3.59f * i), Quaternion.identity, this.transform);
+            newPrefabInstance = Instantiate(syllablePrefab, new Vector3(0.908f + -13.77f, 1.65f + 0.57f, 5.77f + -5.06f + 3.59f * i), Quaternion.identity, this.transform);
             TextMeshPro tmp = newPrefabInstance.GetComponentInChildren<TextMeshPro>();
             tmp.text = currentWordSyllables[i];
         }
@@ -32,7 +35,14 @@ public class SyllableTracker : MonoBehaviour
 
     public void Update()
     {
-        
+        if (currentWord != WordProvider.GetCurrentWord())
+        {
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
+            Start();
+        }
     }
 
     public void onClick(GameObject obj)

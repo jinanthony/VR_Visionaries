@@ -49,6 +49,15 @@ public class Button : MonoBehaviour
             
     }
 
+    public void onNext()
+    {
+        rightController.SendHapticImpulse(0.5f, 0.3f);
+        leftController.SendHapticImpulse(0.5f, 0.3f);
+        Debug.Log("Previous word:" + WordProvider.GetCurrentWord());
+        WordProvider.IncrementWord();
+        Debug.Log("Current word:" + WordProvider.GetCurrentWord());
+    }
+
     public void onDelete()
     {
         //Debug.Log("I clicked delete!");

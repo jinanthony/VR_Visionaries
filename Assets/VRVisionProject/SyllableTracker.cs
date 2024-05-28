@@ -30,6 +30,11 @@ public class SyllableTracker : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        
+    }
+
     public void onClick(GameObject obj)
     {
         obj.SetActive(false);

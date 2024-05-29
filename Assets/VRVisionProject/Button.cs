@@ -15,10 +15,12 @@ public class Button : MonoBehaviour
 
     public XRBaseController leftController;
     public XRBaseController rightController;
+    public bool correctWordTyped;
 
     private void Start()
     {
         stringInput = "";
+        correctWordTyped = false;
     }
 
     public void onClick(string buttonName)
@@ -41,6 +43,7 @@ public class Button : MonoBehaviour
         {
            // Debug.Log("right SPELLING");
             screenText.color = Color.green;
+            correctWordTyped = true;
         } else
         {
           // Debug.Log("WRONG SPELLING");
@@ -55,8 +58,9 @@ public class Button : MonoBehaviour
         Debug.Log("Previous word:" + WordProvider.GetCurrentWord());
         WordProvider.IncrementWord();
         Debug.Log("Current word:" + WordProvider.GetCurrentWord());
-
+        stringInput = "";
         board.resetBoard();
+        correctWordTyped = false;
 
     }
 

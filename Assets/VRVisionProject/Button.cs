@@ -17,10 +17,15 @@ public class Button : MonoBehaviour
     public XRBaseController rightController;
     public bool correctWordTyped;
 
-    private void Start()
+    public GameObject syllableSet;
+    private SyllableTracker syllableScript;
+
+    public void Start()
     {
         stringInput = "";
         correctWordTyped = false;
+        syllableSet = GameObject.Find("Set of Syllables");
+        syllableScript = syllableSet.GetComponent<SyllableTracker>();
     }
 
     public void onClick(string buttonName)
@@ -62,6 +67,14 @@ public class Button : MonoBehaviour
         board.resetBoard();
         correctWordTyped = false;
 
+    }
+
+    public void onStartOver(Whiteboard board)
+    {
+        stringInput = "";
+        board.resetBoard();
+        correctWordTyped = false;
+        syllableScript.Start();
     }
 
     public void oneSound()

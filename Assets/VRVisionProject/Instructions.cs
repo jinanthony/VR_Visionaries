@@ -7,7 +7,6 @@ public class Instructions : MonoBehaviour
 
     public string instructions = "Welcome to our game. \nToday we will be practicing our spelling. \n Navigate to your left, the practice zone by teleporting, and \nread the instructions on the left side of \nthe wall first to continue. If you need to click to \ndraw on the whiteboard, type letters, or\n teleport, use the inner button on the remotes.";
 
-
     public void onClickWelcome()
     {
         instructions = "Welcome to our game. \nToday we will be practicing our spelling. \n Navigate to your left, the practice zone by teleporting, and \nread the instructions on the left side of \nthe wall first to continue. If you need to click to \ndraw on the whiteboard, type letters, or\n teleport, use the inner button on the remotes.";

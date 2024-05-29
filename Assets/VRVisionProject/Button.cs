@@ -15,10 +15,23 @@ public class Button : MonoBehaviour
 
     public XRBaseController leftController;
     public XRBaseController rightController;
+    public bool correctWordTyped;
 
-    private void Start()
+    public GameObject syllableSet;
+    private GameObject thankYouBox;
+    private GameObject suggestWordBox;
+    private SyllableTracker syllableScript;
+    private bool suggestWordModeEnabled;
+
+    public void Start()
     {
         stringInput = "";
+        correctWordTyped = false;
+        syllableSet = GameObject.Find("Set of Syllables");
+        thankYouBox = GameObject.Find("Thank You Message Holder");
+        suggestWordBox = GameObject.Find("Suggest A Word Message Holder");
+        syllableScript = syllableSet.GetComponent<SyllableTracker>();
+        suggestWordModeEnabled = false;
     }
 
     public void onClick(string buttonName)
@@ -33,20 +46,30 @@ public class Button : MonoBehaviour
 
     public void onEnter()
     {
-        // Debug.Log("I clicked enter!");
-        rightController.SendHapticImpulse(0.5f, 0.3f);
-        leftController.SendHapticImpulse(0.5f, 0.3f);
-
-        if (stringInput == WordProvider.GetCurrentWord())
+        if (suggestWordModeEnabled)
         {
-           // Debug.Log("right SPELLING");
-            screenText.color = Color.green;
-        } else
-        {
-          // Debug.Log("WRONG SPELLING");
-            screenText.color = Color.red;
+            stringInput = "";
+            thankYouBox.transform.GetChild(0).gameObject.SetActive(true);
+            suggestWordModeEnabled = false;
         }
-            
+        else
+        {
+            // Debug.Log("I clicked enter!");
+            rightController.SendHapticImpulse(0.5f, 0.3f);
+            leftController.SendHapticImpulse(0.5f, 0.3f);
+
+            if (stringInput == WordProvider.GetCurrentWord())
+            {
+                // Debug.Log("right SPELLING");
+                screenText.color = Color.green;
+                correctWordTyped = true;
+            }
+            else
+            {
+                // Debug.Log("WRONG SPELLING");
+                screenText.color = Color.red;
+            }
+        }            
     }
 
     public void onNext(Whiteboard board)
@@ -55,9 +78,26 @@ public class Button : MonoBehaviour
         Debug.Log("Previous word:" + WordProvider.GetCurrentWord());
         WordProvider.IncrementWord();
         Debug.Log("Current word:" + WordProvider.GetCurrentWord());
-
+        stringInput = "";
         board.resetBoard();
+        correctWordTyped = false;
 
+    }
+
+    public void onStartOver(Whiteboard board)
+    {
+        stringInput = "";
+        board.resetBoard();
+        suggestWordModeEnabled = false;
+        correctWordTyped = false;
+        syllableScript.Start();
+    }
+
+    public void onSuggestWord()
+    {
+        stringInput = "";
+        suggestWordModeEnabled = true;
+        suggestWordBox.transform.GetChild(0).gameObject.SetActive(true);
     }
 
     public void oneSound()

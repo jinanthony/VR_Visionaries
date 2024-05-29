@@ -1334,8 +1334,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Welcome to our game. \nToday we will be practicing our spelling. \n Navigate
-    to your left, the practice zone by teleporting, and \nread the instructions on
-    the left side of \nthe wall first to continue. If you need to click to \ndraw
+    to your right, the practice zone by teleporting, and \nread the instructions
+    on the left side of \nthe wall first to continue. If you need to click to \ndraw
     on the whiteboard, type letters, or\n teleport, use the inner button on the remotes.
     \nIf you do not want to teleport, you can also navigate the scene using the joystick. '
   m_isRightToLeft: 0
@@ -4794,7 +4794,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

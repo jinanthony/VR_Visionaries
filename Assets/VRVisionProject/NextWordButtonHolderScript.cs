@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class NextWordButtonHolderScript : MonoBehaviour
 {
+
+    public GameObject notWorkingNextButton;
+
     public GameObject screen;
     private Button script;
     // Start is called before the first frame update
@@ -18,10 +21,12 @@ public class NextWordButtonHolderScript : MonoBehaviour
         if (script.correctWordTyped)
         {
             transform.GetChild(0).gameObject.SetActive(true);
+            notWorkingNextButton.SetActive(false);
         }
         else
         {
             transform.GetChild(0).gameObject.SetActive(false);
+            notWorkingNextButton.SetActive(true);
         }
     }
 }

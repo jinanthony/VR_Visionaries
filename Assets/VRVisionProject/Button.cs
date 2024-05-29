@@ -49,13 +49,24 @@ public class Button : MonoBehaviour
             
     }
 
-    public void onNext()
+    public void onNext(Whiteboard board)
     {
-        rightController.SendHapticImpulse(0.5f, 0.3f);
-        leftController.SendHapticImpulse(0.5f, 0.3f);
+
         Debug.Log("Previous word:" + WordProvider.GetCurrentWord());
         WordProvider.IncrementWord();
         Debug.Log("Current word:" + WordProvider.GetCurrentWord());
+
+        board.resetBoard();
+
+    }
+
+    public void oneSound()
+    {
+
+        rightController.SendHapticImpulse(0.5f, 0.1f);
+        leftController.SendHapticImpulse(0.5f, 0.1f);
+
+
     }
 
     public void onDelete()

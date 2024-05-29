@@ -135,5 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e2d074d68e4954799dce47bfd1fc7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftController: {fileID: 8323045410951297682, guid: 6f9404661e91f45ee861561c1477c3a3,
+    type: 3}
+  rightController: {fileID: 3402903838034366483, guid: fa363bdd9bdee437a99ed1b6d7fe090b,
+    type: 3}
   texture: {fileID: 0}
   textureSize: {x: 2048, y: 2048}

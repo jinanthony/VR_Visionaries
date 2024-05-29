@@ -398,6 +398,10 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
+  leftController: {fileID: 8323045410951297682, guid: 6f9404661e91f45ee861561c1477c3a3,
+    type: 3}
+  rightController: {fileID: 3402903838034366483, guid: fa363bdd9bdee437a99ed1b6d7fe090b,
+    type: 3}
 --- !u!114 &7539301414188676033
 MonoBehaviour:
   m_ObjectHideFlags: 0

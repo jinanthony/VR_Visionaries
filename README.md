@@ -23,5 +23,4 @@ If you have successfully spelled the word you can click the "Next Word" button t
 
 ## HW 4: VR_Visionaries Instruction Video Walkthrough 
 
-## HW 4: VR_Visionaries Video with Gulfs 
 

@@ -22,5 +22,7 @@ If you have successfully spelled the word you can click the "Next Word" button t
 <img width="1670" alt="Screenshot 2024-05-16 at 2 02 11 PM" src="https://github.com/jinanthony/VR_Visionaries/assets/72777523/0913674f-36ff-44a5-8a56-9719ee30fc39">
 
 ## HW 4: VR_Visionaries Instruction Video Walkthrough 
+https://github.com/jinanthony/VR_Visionaries/assets/72777523/171cbe42-0c9a-4a9b-88a8-657d3c362442
+
 
 

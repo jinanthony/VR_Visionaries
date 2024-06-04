@@ -26,7 +26,7 @@ public class Whiteboard : MonoBehaviour
     public void resetBoard()
     {
         var r = GetComponent<Renderer>();
-        Texture2D texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
+       // Texture2D texture = new Texture2D((int)textureSize.x, (int)textureSize.y);
 
        
         Color32[] greyPixels = new Color32[texture.width * texture.height];
